@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacionBotica", "AplicacionBotica\AplicacionBotica.csproj", "{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{1653ADAD-FCCE-46B0-8E49-5C49CFBA3BA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1653ADAD-FCCE-46B0-8E49-5C49CFBA3BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1653ADAD-FCCE-46B0-8E49-5C49CFBA3BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1653ADAD-FCCE-46B0-8E49-5C49CFBA3BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1653ADAD-FCCE-46B0-8E49-5C49CFBA3BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

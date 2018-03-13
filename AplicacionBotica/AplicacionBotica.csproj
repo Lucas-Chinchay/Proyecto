@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3752DDEE-A247-4D9D-BD6A-0EF461BE59EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AplicacionBotica</RootNamespace>
+    <AssemblyName>AplicacionBotica</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexion\mdlVariablesDeAplicacionBotica.cs" />
+    <Compile Include="Formulario\frmCategoria_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmCategoria_Registrar.Designer.cs">
+      <DependentUpon>frmCategoria_Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmCliente_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmCliente_Buscar.Designer.cs">
+      <DependentUpon>frmCliente_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmCliente_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmCliente_Registrar.Designer.cs">
+      <DependentUpon>frmCliente_Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado.Designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Buscar.Designer.cs">
+      <DependentUpon>frmEmpleado_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEntrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEntrar.Designer.cs">
+      <DependentUpon>frmEntrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmPresentacion_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmPresentacion_Registrar.Designer.cs">
+      <DependentUpon>frmPresentacion_Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmProducto_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmProducto_Buscar.Designer.cs">
+      <DependentUpon>frmProducto_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmProducto_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmProducto_Registrar.Designer.cs">
+      <DependentUpon>frmProducto_Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmRptEmpleado_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmRptEmpleado_Lista.Designer.cs">
+      <DependentUpon>frmRptEmpleado_Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmRptProducto_Listar_Todo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmRptProducto_Listar_Todo.Designer.cs">
+      <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioControl\userCliente_Buscar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioControl\userCliente_Buscar.Designer.cs">
+      <DependentUpon>userCliente_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioControl\userEmpleado_Registrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioControl\userEmpleado_Registrar.Designer.cs">
+      <DependentUpon>userEmpleado_Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioControl\userInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioControl\userInicio.Designer.cs">
+      <DependentUpon>userInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioControl\userProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioControl\userProducto.Designer.cs">
+      <DependentUpon>userProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioControl\UserProducto_Buscar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioControl\UserProducto_Buscar.Designer.cs">
+      <DependentUpon>UserProducto_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios\clsBorrar_Control.cs" />
+    <Compile Include="Utilitarios\clsPanel.cs" />
+    <Compile Include="Utilitarios\clsUsuarioControl.cs" />
+    <EmbeddedResource Include="Formulario\frmCategoria_Registrar.resx">
+      <DependentUpon>frmCategoria_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmCliente_Buscar.resx">
+      <DependentUpon>frmCliente_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmCliente_Registrar.resx">
+      <DependentUpon>frmCliente_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEmpleado_Buscar.resx">
+      <DependentUpon>frmEmpleado_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEntrar.resx">
+      <DependentUpon>frmEntrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmPresentacion_Registrar.resx">
+      <DependentUpon>frmPresentacion_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmProducto_Buscar.resx">
+      <DependentUpon>frmProducto_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmProducto_Registrar.resx">
+      <DependentUpon>frmProducto_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmRptEmpleado_Lista.resx">
+      <DependentUpon>frmRptEmpleado_Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmRptProducto_Listar_Todo.resx">
+      <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reporte\rptEmpleado_Lista.rdlc" />
+    <EmbeddedResource Include="Reporte\rptProducto_Listar_Todo.rdlc" />
+    <EmbeddedResource Include="UsuarioControl\userCliente_Buscar.resx">
+      <DependentUpon>userCliente_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioControl\userEmpleado_Registrar.resx">
+      <DependentUpon>userEmpleado_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioControl\userInicio.resx">
+      <DependentUpon>userInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioControl\userProducto.resx">
+      <DependentUpon>userProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioControl\UserProducto_Buscar.resx">
+      <DependentUpon>UserProducto_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Biblioteca.clsEmpleado.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.clsProducto.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{1653adad-fcce-46b0-8e49-5c49cfba3ba0}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
