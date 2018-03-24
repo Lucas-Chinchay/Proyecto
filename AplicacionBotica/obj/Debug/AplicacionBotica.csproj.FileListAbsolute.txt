@@ -467,3 +467,6 @@ E:\ProyectoFinal\Botica\AplicacionBotica\obj\Debug\AplicacionBotica.UsuarioContr
 E:\ProyectoFinal\Botica\AplicacionBotica\obj\Debug\AplicacionBotica.csproj.GenerateResource.Cache
 E:\ProyectoFinal\Botica\AplicacionBotica\obj\Debug\RdlCompile.cache
 E:\ProyectoFinal\Botica\AplicacionBotica\obj\Debug\RdlCompile.compiled
+F:\yoel\AplicacionBotica\bin\Debug\AplicacionBotica.exe.config
+F:\yoel\AplicacionBotica\obj\Debug\AplicacionBotica.exe
+F:\yoel\AplicacionBotica\obj\Debug\AplicacionBotica.pdb
