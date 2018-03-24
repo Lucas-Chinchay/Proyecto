@@ -39,6 +39,15 @@ namespace Biblioteca
             set { _Venta = value; }
         }
 
+
+        public string producto_Nombre
+        {
+            get { return _Producto.NombreProducto; }
+        }
+        public DateTime Venta_Fecha
+        {
+            get { return Venta.FechaVenta; }
+        }
         /// <summary>
         /// Registrar Venta
         /// </summary>

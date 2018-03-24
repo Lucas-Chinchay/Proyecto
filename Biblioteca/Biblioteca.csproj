@@ -46,8 +46,30 @@
     <Compile Include="clsProducto.cs" />
     <Compile Include="clsVenta.cs" />
     <Compile Include="clsVentaDetalle.cs" />
+    <Compile Include="dstReporte_fecha.cs">
+      <DependentUpon>dstReporte_fecha.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dstReporte_fecha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstReporte_fecha.xsd</DependentUpon>
+    </Compile>
     <Compile Include="mdlVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dstReporte_fecha.xsc">
+      <DependentUpon>dstReporte_fecha.xsd</DependentUpon>
+    </None>
+    <None Include="dstReporte_fecha.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstReporte_fecha.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dstReporte_fecha.xss">
+      <DependentUpon>dstReporte_fecha.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

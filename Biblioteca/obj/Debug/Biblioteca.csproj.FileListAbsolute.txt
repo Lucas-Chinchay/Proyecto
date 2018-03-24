@@ -98,3 +98,8 @@ C:\Users\Kali\Desktop\parte3\Botica\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\Kali\Desktop\parte3\Botica\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\Kali\Desktop\parte3\Botica\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\Kali\Desktop\parte3\Botica\Biblioteca\obj\Debug\Biblioteca.pdb
+F:\yoel\Biblioteca\bin\Debug\Biblioteca.dll
+F:\yoel\Biblioteca\bin\Debug\Biblioteca.pdb
+F:\yoel\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+F:\yoel\Biblioteca\obj\Debug\Biblioteca.dll
+F:\yoel\Biblioteca\obj\Debug\Biblioteca.pdb

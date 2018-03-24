@@ -90,7 +90,7 @@
             // btnEliminarItem
             // 
             this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.Location = new System.Drawing.Point(732, 418);
+            this.btnEliminarItem.Location = new System.Drawing.Point(732, 430);
             this.btnEliminarItem.Name = "btnEliminarItem";
             this.btnEliminarItem.Size = new System.Drawing.Size(138, 25);
             this.btnEliminarItem.TabIndex = 38;
@@ -101,9 +101,9 @@
             // btnRegistrarVenta
             // 
             this.btnRegistrarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(732, 387);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(732, 399);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(126, 25);
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(138, 25);
             this.btnRegistrarVenta.TabIndex = 37;
             this.btnRegistrarVenta.Text = "&Registrar Venta";
             this.btnRegistrarVenta.UseVisualStyleBackColor = true;
@@ -112,11 +112,11 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(757, 449);
+            this.btnSalir.Location = new System.Drawing.Point(757, 461);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 25);
             this.btnSalir.TabIndex = 36;
-            this.btnSalir.Text = "&Salir";
+            this.btnSalir.Text = "&Imprimir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -569,7 +569,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(757, 491);
+            this.button1.Location = new System.Drawing.Point(757, 492);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 66;

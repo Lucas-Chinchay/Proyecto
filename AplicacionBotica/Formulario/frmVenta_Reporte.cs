@@ -55,5 +55,12 @@ namespace AplicacionBotica.Formulario
                 contador = contador + 1;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        //    frmRptReporte_fecha RFecha=new frmRptReporte_fecha();
+        //    RFecha.dstReporte_fechaBindingSource.DataSource= clsVenta.Reporte_PorFechas();
+        //    this.reportViewer1.RefreshReport();
+        }
     }
 }

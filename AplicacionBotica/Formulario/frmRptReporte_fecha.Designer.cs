@@ -1,6 +1,6 @@
 ﻿namespace AplicacionBotica.Formulario
 {
-    partial class frmRptVenta
+    partial class frmRptReporte_fecha
     {
         /// <summary>
         /// Required designer variable.
@@ -30,37 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.clsVentaDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.clsVentaDetalleBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // clsVentaDetalleBindingSource
-            // 
-            this.clsVentaDetalleBindingSource.DataSource = typeof(Biblioteca.clsVentaDetalle);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.clsVentaDetalleBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionBotica.Reporte.rptVenta.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionBotica.Reporte.rptEmpleado_Lista.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(733, 476);
+            this.reportViewer1.Size = new System.Drawing.Size(527, 436);
             this.reportViewer1.TabIndex = 0;
             // 
-            // frmRptVenta
+            // frmRptReporte_fecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 476);
+            this.ClientSize = new System.Drawing.Size(527, 436);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmRptVenta";
-            this.Text = "frmRptVenta";
-            this.Load += new System.EventHandler(this.frmRptVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clsVentaDetalleBindingSource)).EndInit();
+            this.Name = "frmRptReporte_fecha";
+            this.Text = "frmRptReporte_fecha";
+            this.Load += new System.EventHandler(this.frmRptReporte_fecha_Load);
             this.ResumeLayout(false);
 
         }
@@ -68,6 +60,5 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        public System.Windows.Forms.BindingSource clsVentaDetalleBindingSource;
     }
 }

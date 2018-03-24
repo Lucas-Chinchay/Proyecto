@@ -137,6 +137,12 @@
     <Compile Include="Formulario\frmRptProducto_Listar_Todo.Designer.cs">
       <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmRptReporte_fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmRptReporte_fecha.Designer.cs">
+      <DependentUpon>frmRptReporte_fecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmRptVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="Formulario\frmRptProducto_Listar_Todo.resx">
       <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmRptReporte_fecha.resx">
+      <DependentUpon>frmRptReporte_fecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmRptVenta.resx">
       <DependentUpon>frmRptVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +284,7 @@
     <None Include="Properties\DataSources\Biblioteca.clsProducto.datasource" />
     <None Include="Properties\DataSources\Biblioteca.clsVenta.datasource" />
     <None Include="Properties\DataSources\Biblioteca.clsVentaDetalle.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.dstReporte_fecha.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
