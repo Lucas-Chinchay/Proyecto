@@ -21,7 +21,7 @@ namespace AplicacionBotica.Formulario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            clsUsuarioControl.addPanel(new userEmpleado_Registrar(), panelFormulario);
+            clsPanel.addPanel(new frmEmpleado_Registrar(), panelFormulario);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

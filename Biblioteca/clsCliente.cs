@@ -85,6 +85,10 @@ namespace Biblioteca
             ApellidoMaterno = argApellidoMaterno;
             DNI = argDNI;
         }
+        public clsCliente(int   argCodigp)
+        {
+                        CodigoCliente   = argCodigp;
+        }
         public void Registrar_Cliente()
         {
             SqlConnection miConexion;
@@ -100,6 +104,21 @@ namespace Biblioteca
             miConexion.Open();
             cmd.ExecuteNonQuery();
             miConexion.Close();
+        }
+
+        public static DateTime oBTENER_fECHA()
+        {
+            SqlConnection miConexion;
+            miConexion = new SqlConnection(mdlVariables.CadenaConexion);
+            SqlCommand cmd;
+            cmd = new SqlCommand("[usp_Capturar_AnioActual]", miConexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+         
+            miConexion.Open();
+            DateTime X;
+            X = Convert.ToDateTime( cmd.ExecuteScalar());
+            miConexion.Close();
+            return X;
         }
 
         public static List<clsCliente> Buscar_Cliente_Nombre_Ap(string textoABuscarClienteNombre)
@@ -131,5 +150,30 @@ namespace Biblioteca
             miConexion.Close();
             return miVariable;
         }
+        //public static List<clsCliente> Listar_Cliente()
+        //{
+        //    List<clsCliente> variable = new List<clsCliente>();
+        //    SqlConnection Conexion;
+        //    Conexion = new SqlConnection(mdlVariables.CadenaConexion);
+        //    SqlCommand comandos;
+        //    comandos = new SqlCommand("usp_categoria_listar", Conexion);
+        //    comandos.CommandType = System.Data.CommandType.StoredProcedure;
+        //    Conexion.Open();
+        //    SqlDataReader datos;
+        //    datos = comandos.ExecuteReader();
+        //    while (datos.Read() == true)
+        //    {
+        //        clsCliente ListarCategoria;
+        //        ListarCategoria = new clsCliente(Convert.ToInt32(datos["CodigoCliente"]),
+        //            Convert.ToString(datos["Nombre"]),
+        //           Convert.ToString(datos["ApellidoPaterno"]),
+        //            Convert.ToString(datos["ApellidoMaterno"]),
+        //            Convert.ToString(datos["DNI"]),
+        //            Convert.ToString(datos["Direccion"]));
+        //        variable.Add(ListarCategoria);
+        //    }
+        //    Conexion.Close();
+        //    return variable;
+        //}
     }
 }

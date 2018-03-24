@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\mdlVariablesDeAplicacionBotica.cs" />
+    <Compile Include="Formulario\frmAdministrar_Clave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmAdministrar_Clave.Designer.cs">
+      <DependentUpon>frmAdministrar_Clave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmCategoria_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,12 +71,6 @@
     <Compile Include="Formulario\frmCliente_Buscar.Designer.cs">
       <DependentUpon>frmCliente_Buscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\frmCliente_Registrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\frmCliente_Registrar.Designer.cs">
-      <DependentUpon>frmCliente_Registrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +82,18 @@
     </Compile>
     <Compile Include="Formulario\frmEmpleado_Buscar.Designer.cs">
       <DependentUpon>frmEmpleado_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Cambiar_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Cambiar_Password.Designer.cs">
+      <DependentUpon>frmEmpleado_Cambiar_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEmpleado_Registrar.Designer.cs">
+      <DependentUpon>frmEmpleado_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\frmEntrar.cs">
       <SubType>Form</SubType>
@@ -125,11 +137,29 @@
     <Compile Include="Formulario\frmRptProducto_Listar_Todo.Designer.cs">
       <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmRptVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmRptVenta.Designer.cs">
+      <DependentUpon>frmRptVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmVendedor.Designer.cs">
+      <DependentUpon>frmVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\frmVenta.Designer.cs">
       <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmVenta_Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmVenta_Reporte.Designer.cs">
+      <DependentUpon>frmVenta_Reporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,12 +168,6 @@
     </Compile>
     <Compile Include="UsuarioControl\userCliente_Buscar.Designer.cs">
       <DependentUpon>userCliente_Buscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UsuarioControl\userEmpleado_Registrar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UsuarioControl\userEmpleado_Registrar.Designer.cs">
-      <DependentUpon>userEmpleado_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioControl\userInicio.cs">
       <SubType>UserControl</SubType>
@@ -166,20 +190,26 @@
     <Compile Include="Utilitarios\clsBorrar_Control.cs" />
     <Compile Include="Utilitarios\clsPanel.cs" />
     <Compile Include="Utilitarios\clsUsuarioControl.cs" />
+    <EmbeddedResource Include="Formulario\frmAdministrar_Clave.resx">
+      <DependentUpon>frmAdministrar_Clave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmCategoria_Registrar.resx">
       <DependentUpon>frmCategoria_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmCliente_Buscar.resx">
       <DependentUpon>frmCliente_Buscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\frmCliente_Registrar.resx">
-      <DependentUpon>frmCliente_Registrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmEmpleado_Buscar.resx">
       <DependentUpon>frmEmpleado_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEmpleado_Cambiar_Password.resx">
+      <DependentUpon>frmEmpleado_Cambiar_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEmpleado_Registrar.resx">
+      <DependentUpon>frmEmpleado_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmEntrar.resx">
       <DependentUpon>frmEntrar.cs</DependentUpon>
@@ -202,8 +232,17 @@
     <EmbeddedResource Include="Formulario\frmRptProducto_Listar_Todo.resx">
       <DependentUpon>frmRptProducto_Listar_Todo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmRptVenta.resx">
+      <DependentUpon>frmRptVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmVendedor.resx">
+      <DependentUpon>frmVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmVenta_Reporte.resx">
+      <DependentUpon>frmVenta_Reporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,11 +255,9 @@
     </Compile>
     <EmbeddedResource Include="Reporte\rptEmpleado_Lista.rdlc" />
     <EmbeddedResource Include="Reporte\rptProducto_Listar_Todo.rdlc" />
+    <EmbeddedResource Include="Reporte\rptVenta.rdlc" />
     <EmbeddedResource Include="UsuarioControl\userCliente_Buscar.resx">
       <DependentUpon>userCliente_Buscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioControl\userEmpleado_Registrar.resx">
-      <DependentUpon>userEmpleado_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioControl\userInicio.resx">
       <DependentUpon>userInicio.cs</DependentUpon>
@@ -231,8 +268,13 @@
     <EmbeddedResource Include="UsuarioControl\UserProducto_Buscar.resx">
       <DependentUpon>UserProducto_Buscar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Biblioteca.clsCategoria.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.clsCliente.datasource" />
     <None Include="Properties\DataSources\Biblioteca.clsEmpleado.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.clsPresentacion.datasource" />
     <None Include="Properties\DataSources\Biblioteca.clsProducto.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.clsVenta.datasource" />
+    <None Include="Properties\DataSources\Biblioteca.clsVentaDetalle.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

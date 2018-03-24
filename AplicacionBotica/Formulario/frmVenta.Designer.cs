@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             this.btnEliminarItem = new System.Windows.Forms.Button();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dtvLista_Venta = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnBuscar_Producto = new System.Windows.Forms.Button();
@@ -80,10 +74,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtVenta = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvLista_Venta)).BeginInit();
+            this.importe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelFormulario = new System.Windows.Forms.Panel();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -102,6 +96,7 @@
             this.btnEliminarItem.TabIndex = 38;
             this.btnEliminarItem.Text = "&Eliminar Producto";
             this.btnEliminarItem.UseVisualStyleBackColor = true;
+            this.btnEliminarItem.Click += new System.EventHandler(this.btnEliminarItem_Click);
             // 
             // btnRegistrarVenta
             // 
@@ -123,59 +118,7 @@
             this.btnSalir.TabIndex = 36;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // dtvLista_Venta
-            // 
-            this.dtvLista_Venta.AllowUserToAddRows = false;
-            this.dtvLista_Venta.BackgroundColor = System.Drawing.Color.White;
-            this.dtvLista_Venta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvLista_Venta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column3});
-            this.dtvLista_Venta.GridColor = System.Drawing.Color.DimGray;
-            this.dtvLista_Venta.Location = new System.Drawing.Point(19, 377);
-            this.dtvLista_Venta.Name = "dtvLista_Venta";
-            this.dtvLista_Venta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvLista_Venta.Size = new System.Drawing.Size(707, 147);
-            this.dtvLista_Venta.TabIndex = 35;
-            this.dtvLista_Venta.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvLista_Venta_CellContentDoubleClick);
-            this.dtvLista_Venta.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dtvLista_Venta_MouseDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "CANT.";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 330;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column4.HeaderText = "P. UNIT.";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 91;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column3.HeaderText = "IMPORTE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 90;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox4
             // 
@@ -212,6 +155,7 @@
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 21);
             this.nudCantidad.TabIndex = 14;
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // btnBuscar_Producto
             // 
@@ -462,6 +406,7 @@
             this.rbnFactura.TabIndex = 3;
             this.rbnFactura.Text = "Factura";
             this.rbnFactura.UseVisualStyleBackColor = true;
+            this.rbnFactura.CheckedChanged += new System.EventHandler(this.rbnFactura_CheckedChanged);
             // 
             // rbnBoleta
             // 
@@ -525,6 +470,7 @@
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(57, 23);
             this.lblSerie.TabIndex = 1;
+            this.lblSerie.Text = "abb";
             // 
             // lblTipo
             // 
@@ -563,7 +509,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(627, 530);
+            this.txtTotal.Location = new System.Drawing.Point(626, 564);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(99, 20);
@@ -573,7 +519,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(572, 533);
+            this.label11.Location = new System.Drawing.Point(571, 567);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 14;
@@ -585,12 +531,12 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.importe});
             this.lstvVenta.FullRowSelect = true;
             this.lstvVenta.GridLines = true;
-            this.lstvVenta.Location = new System.Drawing.Point(20, 474);
+            this.lstvVenta.Location = new System.Drawing.Point(19, 373);
             this.lstvVenta.Name = "lstvVenta";
-            this.lstvVenta.Size = new System.Drawing.Size(546, 123);
+            this.lstvVenta.Size = new System.Drawing.Size(707, 166);
             this.lstvVenta.TabIndex = 65;
             this.lstvVenta.UseCompatibleStateImageBehavior = false;
             this.lstvVenta.View = System.Windows.Forms.View.Details;
@@ -609,36 +555,42 @@
             this.columnHeader3.Text = "P.UNIT";
             this.columnHeader3.Width = 163;
             // 
-            // columnHeader4
+            // importe
             // 
-            this.columnHeader4.Text = "IMPORTE";
-            this.columnHeader4.Width = 142;
+            this.importe.Text = "IMPORTE";
+            this.importe.Width = 142;
             // 
-            // label14
+            // timer1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(571, 571);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 13);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "Total S/.";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtVenta
+            // button1
             // 
-            this.txtVenta.Location = new System.Drawing.Point(626, 568);
-            this.txtVenta.Name = "txtVenta";
-            this.txtVenta.ReadOnly = true;
-            this.txtVenta.Size = new System.Drawing.Size(99, 20);
-            this.txtVenta.TabIndex = 67;
-            this.txtVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(757, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "&Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelFormulario
+            // 
+            this.panelFormulario.Location = new System.Drawing.Point(912, 599);
+            this.panelFormulario.Name = "panelFormulario";
+            this.panelFormulario.Size = new System.Drawing.Size(28, 30);
+            this.panelFormulario.TabIndex = 147;
             // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 641);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtVenta);
+            this.Controls.Add(this.panelFormulario);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lstvVenta);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTotal);
@@ -646,7 +598,6 @@
             this.Controls.Add(this.btnEliminarItem);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dtvLista_Venta);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -656,7 +607,6 @@
             this.Name = "frmVenta";
             this.Text = "frmVenta";
             this.Load += new System.EventHandler(this.frmVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtvLista_Venta)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
@@ -680,7 +630,6 @@
         private System.Windows.Forms.Button btnEliminarItem;
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dtvLista_Venta;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtPresentacion;
         private System.Windows.Forms.Label label12;
@@ -716,10 +665,6 @@
         private System.Windows.Forms.Button btnBuscar_Producto;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label13;
@@ -727,8 +672,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtVenta;
+        private System.Windows.Forms.ColumnHeader importe;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelFormulario;
     }
 }
