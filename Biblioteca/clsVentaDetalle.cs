@@ -23,20 +23,7 @@ namespace Biblioteca
             get { return _Cantidad; }
             set { _Cantidad = value; }
         }
-        //private int _CodioVenta;
-
-        //public int CodigoVenta
-        //{
-        //    get { return _CodioVenta; }
-        //    set { _CodioVenta = value; }
-        //}
-        //private int _CodigoProducto;
-
-        //public int CodigoProducto
-        //{
-        //    get { return _CodigoProducto; }
-        //    set { _CodigoProducto = value; }
-        //}
+       
         private clsProducto _Producto;
 
         public clsProducto Producto
@@ -66,23 +53,28 @@ namespace Biblioteca
             Venta = argCodigoVenta;
             Producto = argCodigoProducto;
         }
-        public void Insertar_VentaDetalle()
+        public clsVentaDetalle(decimal argPrecioVenta, int argCantidad)
         {
-            SqlConnection miConexion;
-            miConexion = new SqlConnection(mdlVariables.CadenaConexion);
-
-            SqlCommand cmd;
-            cmd = new SqlCommand("usp_VentaProducto_Registrar", miConexion);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@parPrecioVenta", PrecioVenta);
-            cmd.Parameters.AddWithValue("@parCantidad", Cantidad);
-            cmd.Parameters.AddWithValue("@parCodigoVenta", Venta.CodigoVenta);
-            cmd.Parameters.AddWithValue("@parCodigoProducto", Producto.CodigoProducto);
-
-            miConexion.Open();
-            cmd.ExecuteNonQuery();
-            miConexion.Close();
+            PrecioVenta = argPrecioVenta;
+            Cantidad = argCantidad;           
         }
+        //public void Insertar_VentaDetalle()
+        //{
+        //    SqlConnection miConexion;
+        //    miConexion = new SqlConnection(mdlVariables.CadenaConexion);
+
+        //    SqlCommand cmd;
+        //    cmd = new SqlCommand("usp_VentaProducto_Registrar", miConexion);
+        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@parPrecioVenta", PrecioVenta);
+        //    cmd.Parameters.AddWithValue("@parCantidad", Cantidad);
+        //    cmd.Parameters.AddWithValue("@parCodigoVenta", Venta.CodigoVenta);
+        //    cmd.Parameters.AddWithValue("@parCodigoProducto", Producto.CodigoProducto);
+
+        //    miConexion.Open();
+        //    cmd.ExecuteNonQuery();
+        //    miConexion.Close();
+        //}
     }
 }
 

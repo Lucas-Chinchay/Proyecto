@@ -87,6 +87,13 @@ namespace Biblioteca
             StockActual = argSActual;
         }
 
+        public clsProducto(string argNombre,string argDescripcion)
+        {
+            NombreProducto = argNombre;
+            Descripcion = argDescripcion;
+           
+        }
+
         /// <summary>
         /// Registrar Producto
         /// </summary>
@@ -289,7 +296,7 @@ namespace Biblioteca
 
                 clsCategoria aux02;
                 aux02 = new clsCategoria(
-                    Convert.ToInt16(misDatos["CodigoCategoria"]),
+                    //Convert.ToInt16(misDatos["CodigoCategoria"]),
                     Convert.ToString(misDatos["Categoria"]));
                 clsProducto Fila;
                 Fila = new clsProducto(

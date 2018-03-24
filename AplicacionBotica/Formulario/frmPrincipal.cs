@@ -24,8 +24,7 @@ namespace AplicacionBotica.Formulario
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            //WindowState = FormWindowState.Minimized;
+        {        
             Close();
         }
 
@@ -78,6 +77,29 @@ namespace AplicacionBotica.Formulario
                 panelMenu.Width = 176;
                 panelBoton.Width = 176;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //if (this.WindowState == FormWindowState.Normal)
+            //{
+            //    this.WindowState = FormWindowState.Maximized;
+            //}
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmEmpleado_Cambiar_Password cambiar = new frmEmpleado_Cambiar_Password();
+            cambiar.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmVenta_Reporte reporte = new frmVenta_Reporte();
+            reporte.ShowDialog();
         }
     }
 }

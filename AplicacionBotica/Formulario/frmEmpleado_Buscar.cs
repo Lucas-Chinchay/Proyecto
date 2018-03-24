@@ -21,6 +21,14 @@ namespace AplicacionBotica.Formulario
             get { return _Empleado_Listar; }
             set { _Empleado_Listar = value; }
         }
+        private clsEmpleado _Capturado;
+
+        public clsEmpleado Capturado
+        {
+            get { return _Capturado; }
+            set { _Capturado = value; }
+        }
+        
         
         public frmEmpleado_Buscar()
         {
@@ -46,7 +54,7 @@ namespace AplicacionBotica.Formulario
                 lstDatos.Items[contador].SubItems.Add(elemento.Cargo);
                 lstDatos.Items[contador].SubItems.Add(elemento.Usuario);
                // lstDatos.Items[contador].SubItems.Add(elemento.Clave);
-                Empleado_Listar.Add(elemento);
+               // Empleado_Listar.Add(elemento);
 
                 if (contador % 2 == 0)
                 {
@@ -64,20 +72,41 @@ namespace AplicacionBotica.Formulario
             EmpleadoLista.clsEmpleadoBindingSource.DataSource = Empleado_Listar;
             EmpleadoLista.Show();
         }
-
-        private void lstDatos_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-           ////////////////////Cambiar clave
-        }
-
         private void txtNombreApellido_TextChanged(object sender, EventArgs e)
         {
-
+            lstDatos.Items.Clear();
+            Empleado_Listar.Clear();
+            int contador = 0;
+            foreach (clsEmpleado elemento in clsEmpleado.Buscar_Empleado_DNI(txtNombreApellido.Text))
+            {
+                lstDatos.Items.Add(Convert.ToString(contador + 1));
+                lstDatos.Items[contador].SubItems.Add(elemento.EmpleadoDNI);
+                lstDatos.Items[contador].SubItems.Add(elemento.Nombre + " " + elemento.ApellidoPaterno +
+                                                        " " + elemento.ApellidoMaterno);               
+                lstDatos.Items[contador].SubItems.Add(elemento.FechaIngreso.ToShortDateString());
+                lstDatos.Items[contador].SubItems.Add(elemento.Telefono);
+                lstDatos.Items[contador].SubItems.Add(elemento.Cargo);
+                lstDatos.Items[contador].SubItems.Add(elemento.Usuario);
+                Empleado_Listar.Add(elemento);
+                if (contador % 2 == 0)
+                {
+                    lstDatos.Items[contador].BackColor = Color.Cyan;
+                }
+                contador = contador + 1;
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             clsPanel.addPanel(new frmEmpleado(), panelFormulario);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Capturado = Empleado_Listar[lstDatos.SelectedItems[0].Index];
+            frmAdministrar_Clave admin = new frmAdministrar_Clave();
+            admin.ShowDialog();
+
         }
     }
 }

@@ -44,9 +44,9 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -197,16 +197,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Producto";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(529, 139);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(102, 53);
-            this.btnImprimir.TabIndex = 20;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // panelFormulario
             // 
             this.panelFormulario.Location = new System.Drawing.Point(751, 518);
@@ -224,6 +214,16 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(529, 139);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(102, 53);
+            this.btnImprimir.TabIndex = 20;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // UserProducto_Buscar
             // 
@@ -267,9 +267,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

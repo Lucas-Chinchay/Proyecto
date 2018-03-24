@@ -19,7 +19,6 @@ namespace AplicacionBotica.Formulario
 
         private void frmRptEmpleado_Lista_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
     }

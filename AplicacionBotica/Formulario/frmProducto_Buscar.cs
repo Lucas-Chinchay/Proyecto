@@ -38,19 +38,20 @@ namespace AplicacionBotica.Formulario
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+         //ProductoSeleccionado=null;   
             Close();
         }
 
         private void frmProducto_Buscar_Load(object sender, EventArgs e)
         {
-            AutoCompleteStringCollection listar = new AutoCompleteStringCollection();
-            foreach (clsProducto elemento in clsProducto.Buscar_PorProducto(txtBuscar.Text))
-            {
-                listar.Add(elemento.NombreProducto);
-            }
-            txtBuscar.AutoCompleteCustomSource = listar;
-            txtBuscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtBuscar.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection listar = new AutoCompleteStringCollection();
+            //foreach (clsProducto elemento in clsProducto.Buscar_PorProducto(txtBuscar.Text))
+            //{
+            //    listar.Add(elemento.NombreProducto);
+            //}
+            //txtBuscar.AutoCompleteCustomSource = listar;
+            //txtBuscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //txtBuscar.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
@@ -58,6 +59,8 @@ namespace AplicacionBotica.Formulario
             lstvListarProducto.Items.Clear();
             BuscarProducto.Clear();
             int contador = 0;
+
+
 
             if (rbCategoria.Checked == true)
             {
@@ -71,7 +74,7 @@ namespace AplicacionBotica.Formulario
                     if (elemento.Presentacion == null || elemento.Categoria == null)
                     {
                         lstvListarProducto.Items[contador].SubItems.Add("-");
-                        lstvListarProducto.Items[contador].SubItems.Add("-");
+                       // lstvListarProducto.Items[contador].SubItems.Add("-");
                     }
                     else
                     {
@@ -99,15 +102,15 @@ namespace AplicacionBotica.Formulario
                     if (elemento.Presentacion == null || elemento.Categoria == null)
                     {
                         lstvListarProducto.Items[contador].SubItems.Add("-");
-                        lstvListarProducto.Items[contador].SubItems.Add("-");
+                        //lstvListarProducto.Items[contador].SubItems.Add("-");
                     }
                     else
                     {
                         lstvListarProducto.Items[contador].SubItems.Add(elemento.Presentacion.Nombre);
                         lstvListarProducto.Items[contador].SubItems.Add(elemento.Categoria.Nombre);
-                    }
-                    //lstvListarProducto.Items[contador].SubItems.Add(elemento.Presentacion.Nombre);
-                    lstvListarProducto.Items[contador].SubItems.Add(Convert.ToString(elemento.StockActual));
+                        lstvListarProducto.Items[contador].SubItems.Add(Convert.ToString(elemento.StockActual));
+                    }                
+                    
                     if (contador % 2 == 0)
                     {
                         lstvListarProducto.Items[contador].BackColor = Color.Cyan;

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Biblioteca
 {
-   public class clsVenta
+    public class clsVenta
     {
         private int _CodigoVenta;
 
@@ -24,20 +24,6 @@ namespace Biblioteca
             get { return _FechaVenta; }
             set { _FechaVenta = value; }
         }
-        private string _EmpleadoDNI;
-
-        public string EmpleadoDNI
-        {
-            get { return _EmpleadoDNI; }
-            set { _EmpleadoDNI = value; }
-        }
-        private int _CodigoCliente;
-
-        public int CodigoCliente
-        {
-            get { return _CodigoCliente; }
-            set { _CodigoCliente = value; }
-        }
         private string _TipoComprobante;
 
         public string TipoComprabante
@@ -52,30 +38,74 @@ namespace Biblioteca
             get { return _Serie; }
             set { _Serie = value; }
         }
-        private string _Numero;
+        private int _Numero;
 
-        public string Numero
+        public int Numero
         {
             get { return _Numero; }
             set { _Numero = value; }
         }
-        public clsVenta(DateTime argFechaVenta, string argEmpleadoDNI, string argTipoComprobante,
-        string argSerie, string argNumero)
+        private clsEmpleado _EmpleadoDNI;
+
+        public clsEmpleado EmpleadoDNI
+        {
+            get { return _EmpleadoDNI; }
+            set { _EmpleadoDNI = value; }
+        }
+        private clsCliente _Cliente;
+
+        public clsCliente Cliente
+        {
+            get { return _Cliente; }
+            set { _Cliente = value; }
+        }
+        private clsVentaDetalle _VentaDetalle_Re;
+
+        public clsVentaDetalle VentaDetalle_Re
+        {
+            get { return _VentaDetalle_Re; }
+            set { _VentaDetalle_Re = value; }
+        }
+        private clsProducto _Producto;
+
+        public clsProducto Producto
+        {
+            get { return _Producto; }
+            set { _Producto = value; }
+        }
+        
+        
+
+        public clsVenta(DateTime argFechaVenta, string argTipoComprobante,
+        string argSerie, int argNumero, clsEmpleado argEmpleadoDNI)
         {
             FechaVenta = argFechaVenta;
-            EmpleadoDNI = argEmpleadoDNI;
             TipoComprabante = argTipoComprobante;
             Serie = argSerie;
             Numero = argNumero;
+            EmpleadoDNI = argEmpleadoDNI;
         }
         /// <summary>
-        /// Listar Fecha
+        /// Reporte Venta por fecha
         /// </summary>
         /// <param name="argFechaVenta"></param>
-        public clsVenta(DateTime argFechaVenta)
+        /// <param name="argTipoComprobante"></param>
+        /// <param name="argSerie"></param>
+        /// <param name="argNumero"></param>
+        /// <param name="argEmpleadoDNI"></param>
+        public clsVenta(int argCodigoVenta, DateTime argFechaVenta, string argTipoComprobante,
+               string argSerie, int argNumero, clsEmpleado argEmpleadoDNI, clsProducto argProducto, clsVentaDetalle argVDetalle)
         {
+            CodigoVenta=argCodigoVenta;
             FechaVenta = argFechaVenta;
-        }
+            TipoComprabante = argTipoComprobante;
+            Serie = argSerie;
+            Numero = argNumero;
+            EmpleadoDNI = argEmpleadoDNI;
+            Producto = argProducto;
+            VentaDetalle_Re = argVDetalle;
+        }       
+
         public void Insertar_Venta(List<clsVentaDetalle> argDetalleVentas)
         {
             SqlConnection miConexion;
@@ -85,88 +115,104 @@ namespace Biblioteca
             cmd = new SqlCommand("usp_Venta_Insertar", miConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parFechaVenta", FechaVenta);
-            // cmd.Parameters.AddWithValue("@parEmpleadoDNI", EmpleadoDNI);
-            // cmd.Parameters.AddWithValue("@parCodigoCliente", CodigoCliente);
+            cmd.Parameters.AddWithValue("@parEmpleadoDNI", EmpleadoDNI.EmpleadoDNI);
+            cmd.Parameters.AddWithValue("@parCodigoCliente", Cliente.CodigoCliente);
             cmd.Parameters.AddWithValue("@parTipoComprobante", TipoComprabante);
             cmd.Parameters.AddWithValue("@parSerie", Serie);
             cmd.Parameters.AddWithValue("@parNumero", Numero);
-            //cmd.Parameters.AddWithValue("@parCodigoCategoria", Categoria.CodigoCategoria);
-            //cmd.Parameters.AddWithValue("@parCodigoPresentacion", Presentacion.CodigoPresentacion);
 
-            //cmd.Parameters.AddWithValue("@parCodigo", Categoria.NombreDescripcion);      
-            //cmd.Parameters.AddWithValue("@parCodigoCategoria", Categoria.CodigoCategoria);  
-
-            miConexion.Open();   
-            int CodigoVenta=0;
-            CodigoVenta=Convert.ToInt32(cmd.ExecuteScalar());
-            cmd.ExecuteNonQuery();
+            miConexion.Open();
+            int CodigoVentaG = 0;
+            CodigoVentaG = Convert.ToInt32(cmd.ExecuteScalar());          
             miConexion.Close();
 
             foreach (clsVentaDetalle elemento in argDetalleVentas)
-	        {
-		    SqlConnection miConexion1;
-            miConexion1 = new SqlConnection(mdlVariables.CadenaConexion);
-            SqlCommand cmd1;
-            cmd1 = new SqlCommand("usp_VentaProducto_insertar", miConexion);
-            cmd1.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd1.Parameters.AddWithValue("@parCodigoVenta", CodigoVenta);
-            cmd1.Parameters.AddWithValue("@parCodigoProducto", DBNull.Value);
-            cmd1.Parameters.AddWithValue("@cantidad", elemento.Cantidad);
-            cmd1.Parameters.AddWithValue("@precioVenta", elemento.PrecioVenta);
-            miConexion1.Open();   
-            cmd1.ExecuteNonQuery();
-            miConexion1.Close();
-	        }
-
-        }
-        public static List<clsVenta> CapturarAnioActual()
-        {
-            List<clsVenta> variable = new List<clsVenta>();
-            SqlConnection Conexion;
-            Conexion = new SqlConnection(mdlVariables.CadenaConexion);
-            SqlCommand comandos;
-            comandos = new SqlCommand("usp_Capturar_AnioActual", Conexion);
-            comandos.CommandType = System.Data.CommandType.StoredProcedure;
-            Conexion.Open();
-            SqlDataReader datos;
-            datos = comandos.ExecuteReader();
-            while (datos.Read() == true)
             {
-                clsVenta Listar;
-                Listar = new clsVenta(Convert.ToDateTime(datos["FechaVenta"]));
-                variable.Add(Listar);
+                SqlConnection miConexion1;
+                miConexion1 = new SqlConnection(mdlVariables.CadenaConexion);
+                SqlCommand cmd1;
+                cmd1 = new SqlCommand("usp_VentaProducto_insertar", miConexion1);
+                cmd1.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@parCodigoProducto", elemento.Producto.CodigoProducto);
+                cmd1.Parameters.AddWithValue("@cantidad", elemento.Cantidad);
+                cmd1.Parameters.AddWithValue("@precioVenta", elemento.PrecioVenta);
+                cmd1.Parameters.AddWithValue("@parCodigoVenta", CodigoVentaG);
+                miConexion1.Open();
+                cmd1.ExecuteNonQuery();
+                miConexion1.Close();
             }
-            Conexion.Close();
-            return variable;
-        }
 
-        public static IEnumerable<clsVenta> CapturarAnioActual(DateTime dateTime)
+        }
+        public static DateTime Otbener_Fecha()
         {
-            throw new NotImplementedException();
+            SqlConnection miConexion;
+            miConexion = new SqlConnection(mdlVariables.CadenaConexion);
+            SqlCommand cmd;
+            cmd = new SqlCommand("[usp_Capturar_AnioActual]", miConexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            miConexion.Open();
+            DateTime fecha;
+            fecha = Convert.ToDateTime(cmd.ExecuteScalar());
+            miConexion.Close();
+            return fecha;
+        }
+        public static int Otbener_Numero()
+        {
+            SqlConnection miConexion;
+            miConexion = new SqlConnection(mdlVariables.CadenaConexion);
+            SqlCommand cmd;
+            cmd = new SqlCommand("[usp_Numero_Relativo]", miConexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            miConexion.Open();
+            int NumeroRelativo;
+            NumeroRelativo = Convert.ToInt32(cmd.ExecuteScalar());
+            miConexion.Close();
+            return NumeroRelativo;
         }
 
-        //public String RegistrarVenta()
-        //{
-        //    String Mensaje = "";
-        //    List<clsVenta> lst = new List<clsVenta>();
-        //    try
-        //    {
-        //        lst.Add(new clsVenta("@IdEmpleado", IdEmpleado));
-        //        lst.Add(new clsVenta("@IdCliente", IdCliente));
-        //        lst.Add(new clsVenta("@Serie", Serie));
-        //        lst.Add(new clsVenta("@NroDocumento", NroComprobante));
-        //        lst.Add(new clsVenta("@TipoDocumento", TipoDocumento));
-        //        lst.Add(new clsVenta("@FechaVenta", FechaVenta));
-        //        lst.Add(new clsVenta("@Total", Total));
-        //        lst.Add(new clsVenta("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-        //        M.EjecutarSP("RegistrarVenta", ref lst);
-        //        return Mensaje = lst[7].Valor.ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
+        public static List<clsVenta> Reporte_PorFechas(DateTime dtpBuscar_FechaInicio, DateTime dtpBuscar_FechaFin)
+        {
+            List<clsVenta> miVariable = new List<clsVenta>();
+            SqlConnection miConexion;
+            miConexion = new SqlConnection(mdlVariables.CadenaConexion);
+            SqlCommand COMANDO;
+            COMANDO = new SqlCommand("usp_Venta_Reporte_PorFecha", miConexion);
+            COMANDO.CommandType = System.Data.CommandType.StoredProcedure;
+            COMANDO.Parameters.AddWithValue("@parFechaInicio", dtpBuscar_FechaInicio);
+            COMANDO.Parameters.AddWithValue("@parFechaFin", dtpBuscar_FechaFin);
+            miConexion.Open();
+            SqlDataReader misDatos;
+            misDatos = COMANDO.ExecuteReader();
+            while (misDatos.Read() == true)
+            {
+
+                clsEmpleado Venta = new clsEmpleado(
+                                    Convert.ToString(misDatos["EmpleadoDNI"]),
+                                    Convert.ToString(misDatos["EmpleadoNombre"]),
+                                    Convert.ToString(misDatos["EmpleadoApellido"]),
+                                    Convert.ToString(misDatos["ApellidoMaterno"]));
+               
+
+
+                clsProducto Venta1 = new clsProducto(Convert.ToString(misDatos["ProductoNombre"]),
+                                    Convert.ToString(misDatos["Descripcion"]));
+                //clsProducto Fila;
+
+               clsVentaDetalle venta2 = new clsVentaDetalle(Convert.ToDecimal(misDatos["PrecioVenta"]),
+                                        Convert.ToInt32(misDatos["Cantidad"]));
+
+               clsVenta venta03 = new clsVenta(Convert.ToInt32(misDatos["Venta"]), 
+                                    Convert.ToDateTime(misDatos["FechaVenta"]), Convert.ToString(misDatos["TipoComprobante"]),
+                                    Convert.ToString(misDatos["Serie"]), Convert.ToInt32(misDatos["Numero"]), 
+                                    Venta, Venta1, venta2);
+                miVariable.Add(venta03);
+            }
+            miConexion.Close();
+            return miVariable;
         }
     }
+}
 
 
